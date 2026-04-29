@@ -15,6 +15,8 @@ editor_options:
   chunk_output_type: inline
 ---
 
+> GM GRADE 7.25/10 - Some good writing and observations on variability and study design, but there are some issues:  code bugs (undefined `x_pop` in bootstrap section, incorrect relative error join, incomplete prompts), and several conceptual/language inaccuracies around bootstrap purpose and SE interpretation.
+
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(lubridate)
@@ -200,6 +202,8 @@ Give a scientific reason why some variables are harder to estimate from a small 
 
 > *Write your answer here.*
 
+> GM: -0.5 The prompt is left blank.
+
 ---
 
 ## 4) Relative error vs sample size (partial code + you complete)
@@ -283,6 +287,8 @@ Why does accuracy show “diminishing returns” as n increases?
 
 > *There is more improvement in the initial inclination of n densities compared to latter n densities. This accuracy shows diminishing returns because as more replications exist, the sample becomes closer and closer to the median. Just because of the law of randomness, and general data variability, the high-replicated sample data will never 100% match the original. I think of it like getting a 98% on a small assignment in class- you will never be able to get your grade exactly to the perfect 100% it was.*
 
+> GM: The pattern is described reasonably well. Be careful with wording: increasing n reduces sampling variability / error of the estimate.
+
 ---
 
 # Standard error and sampling distributions
@@ -349,6 +355,8 @@ What changes if you increase `n_samp` vs increase `reps`?
 
 > *The se_theory and the se_simulated are not exactly close because the sample size is only 30. If the sample size (n_samp) was increased, as well a the reps, the se_theory and se_simulated would be closer to each other in value. This would showcase that the se_sim was calculated to a proper extent to match se_theory*
 
+> GM: -0.5 There are issues in the SE comparison code and interpretation. Increasing `n_samp` reduces the SE (narrows the distribution). Increasing `reps` makes the simulation smoother but does not change the true SE. OVerall, the simulatuated and theoretical SE should be and are similar here.
+
 ---
 
 # Bootstrap intuition (one sample, many resamples)
@@ -411,6 +419,8 @@ tibble(boot_means = boot_means) %>%
 What is the bootstrap trying to approximate? When is bootstrap especially useful in EAES?
 
 > *The bootstrap is attempting to approximate the population mean using a smaller, replicated sample. This sampling distribution is more bell shaped due to the high number of replications, being B=1000. Bootstrap can be especially useful in EaES when attempting to gauge a population estimate when you don't have access to enough samples. In this way, you can replicate the samples that you already have to derive something that is closer to the true mean and has a lower standard deviation overall.*
+
+> GM: Yes, the bootstrap tries to approximate the sampling distribution of the mean using only one observed sample. This is especially useful in EAES when we cannot repeatedly sample the full population.
 
 ---
 
@@ -567,6 +577,7 @@ Explain the difference between **precision** and **accuracy** in this example.
 What *kind* of error is summer-only sampling introducing?
 
 > *Yes, the bootstrap distribution looks confident and narrow even though its centered far from the population mean. This is because it sampled from a population only in the summer months, and didn't even consider the opposing winter months to form a bootstrap means. It is confidently marking the mean of the summer months, not the overall population mean. This distribution is precise to the summer samples provided but inaccurate to the population mean. This is introducing bias, or systematic error since deliberately sampling from summer months can skew the data towards one end of the population range.*
+
 
 ---
 
@@ -772,6 +783,8 @@ Interpret the slope confidence interval.
 - What does that imply about the relationship between the predictor and response variable?
 
 >* No, the slope does not include 0. This implies that the predictor and response variable have a positive relationship within a 95% confidence interval. Since my predictor is atmospheric temperature (ta), and my response variable is Gross Primary Productivity (gpp), it would make sense that there is more biological productivity with increasing temperatures. 
+
+> GM: Yes, and for best phrasing: "becaues the confidence interval does not include zero it supports a statistically significant relationships between x and y"
 
 ---
 
