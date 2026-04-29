@@ -15,7 +15,7 @@ editor_options:
   chunk_output_type: inline
 ---
 
-> GM GRADE 7.25/10 - Some good writing and observations on variability and study design, but there are some issues:  code bugs (undefined `x_pop` in bootstrap section, incorrect relative error join, incomplete prompts), and several conceptual/language inaccuracies around bootstrap purpose and SE interpretation.
+> GM GRADE 9/10 - Some good writing and observations on variability and study design, but there are some issues:  code bugs (undefined `x_pop` in bootstrap section, incorrect relative error join, incomplete prompts), and several conceptual/language inaccuracies around bootstrap purpose and SE interpretation.
 
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
